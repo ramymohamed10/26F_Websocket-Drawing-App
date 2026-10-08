@@ -1,4 +1,4 @@
-# Week 4 Lab: Collaborative Drawing Board (WebSocket Application)
+# Week 5 Lab: Collaborative Drawing Board (WebSocket Application)
 
 > **Note:** This is an ungraded activity.
 
@@ -88,8 +88,8 @@ Before you begin, ensure the following are installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/ramymohamed10/26W_Websocket-Drawing-App.git
-cd 26W_Websocket-Drawing-App
+git clone https://github.com/ramymohamed10/26F_Websocket-Drawing-App.git
+cd 26F_Websocket-Drawing-App
 ```
 
 ### 2. Install Dependencies
@@ -121,7 +121,7 @@ Open a second browser tab (or window) to the same URL. Draw something in one tab
 ## Project Structure
 
 ```
-26W_Websocket-Drawing-App/
+26F_Websocket-Drawing-App/
 ├── server.js              Express HTTP server + WebSocket server
 ├── package.json           npm dependencies and scripts
 └── public/                Static frontend files served by Express
@@ -189,12 +189,12 @@ The following table maps lecture concepts to where they appear in the code:
 
 | Concept                   | Where it appears                                                                     |
 | ------------------------- | ------------------------------------------------------------------------------------ |
-| Full-duplex communication | Client sends strokes, server pushes others' strokes:both directions, at any time  |
+| Full-duplex communication | Client sends strokes, server pushes others' strokes:both directions, at any time     |
 | Persistent connection     | One WebSocket connection stays open for the entire session                           |
 | Handshake (HTTP upgrade)  | `new WebSocket('ws://...')` triggers the upgrade from HTTP to WebSocket              |
 | `ws://` vs `wss://`       | Client auto-detects protocol based on `http://` vs `https://` page URL               |
 | Frames                    | Each `JSON.stringify(...)` / `ws.send(...)` is transmitted as a WebSocket text frame |
-| Low latency               | Strokes appear instantly:no HTTP request/response overhead per stroke             |
+| Low latency               | Strokes appear instantly:no HTTP request/response overhead per stroke                |
 | Connection states         | CONNECTING, OPEN, CLOSING, CLOSED mapped to the UI status indicator                  |
 | Close frame               | Either side can disconnect; server cleans up and broadcasts new user count           |
 
